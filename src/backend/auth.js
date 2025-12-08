@@ -1,5 +1,5 @@
 // Système d'authentification basique
-// Pour le projet Git, pas besoin de vrai backend
+// Pour le projet Git, pas besoin de vrai backen
 
 const users = [
     { id: 1, username: 'personne1', password: 'pass1', role: 'admin' },
