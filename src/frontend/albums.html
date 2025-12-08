@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Albums photos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Mes albums</h1>
+            <nav>
+                <span id="username">Bienvenue, Utilisateur</span>
+                <button onclick="logout()">Déconnexion</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Mes Albums</h2>
+            <!-- Create album button -->
+            <button class="btn-primary" onclick="showCreateAlbumForm()">➕ Créer un album</button>
+        </div>
+
+        <!-- Form creation album -->
+        <div id="createAlbumForm" class="form-container" style="display: none;">
+            <h3>Créer un nouvel album</h3>
+            <form onsubmit="createAlbum(event)">
+                <input type="text" id="albumTitle" placeholder="Titre de l'album" required>
+                <textarea id="albumDescription" placeholder="Description de l'album" rows="3"></textarea>
+                <div class="form-buttons">
+                    <button type="submit" class="btn-primary">Créer</button>
+                    <!-- Cancel button -->
+                    <button type="button" class="btn-secondary" onclick="hideCreateAlbumForm()">Annuler</button>
+                </div>
+            </form>
+        </div>
+
+<script src="albums-script.js"></script>
+</body>
+
+</html>
