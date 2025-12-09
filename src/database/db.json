@@ -25,7 +25,37 @@
       "createdAt": "2024-01-15"
     }
   ],
-  "albums": [],
-  "photos": [],
+  "albums": [
+    {
+      "id": 1,
+      "title": "Vacances été 2024",
+      "description": "Photos de nos vacances à la plage",
+      "userId": 1,
+      "createdAt": "2024-06-15",
+      "photoCount": 2
+    }
+  ],
+  "photos": [
+    {
+      "id": 1,
+      "albumId": 1,
+      "title": "Coucher de soleil",
+      "description": "Magnifique coucher de soleil sur la plage",
+      "url": "",
+      "uploadedAt": "2024-06-20",
+      "uploadedBy": 1,
+      "likes": 5
+    },
+    {
+      "id": 2,
+      "albumId": 1,
+      "title": "Paysage montagne",
+      "description": "Vue panoramique des montagnes",
+      "url": "",
+      "uploadedAt": "2024-06-21",
+      "uploadedBy": 1,
+      "likes": 3
+    }
+  ],
   "comments": []
 }
