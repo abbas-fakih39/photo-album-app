@@ -13,9 +13,35 @@ function createAlbum(userId, title, description) {
         photoCount: 0
     };
     albums.push(newAlbum);
+    
     return {
         success: true,
         message: 'Album créé avec succès',
         album: newAlbum
     };
+}
+
+// Get albums by user
+function getAlbumsByUser(userId) {
+    const userAlbums = albums.filter(album => album.userId === userId);
+    return {
+        success: true,
+        albums: userAlbums
+    };
+}
+ 
+// Get album by ID
+function getAlbumById(albumId) {
+    const album = albums.find(a => a.id === albumId);
+    if (album) {
+        return {
+            success: true,
+            album: album
+        };
+    } else {
+        return {
+            success: false,
+            message: 'Album non trouvé'
+        };
+    }
 }
