@@ -45,3 +45,52 @@ function getAlbumById(albumId) {
         };
     }
 }
+
+// Update an album
+function updateAlbum(albumId, userId, updates) {
+    const albumIndex = albums.findIndex(a => a.id === albumId && a.userId === userId);
+    if (albumIndex !== -1) {
+        albums[albumIndex] = {
+            ...albums[albumIndex],
+            ...updates,
+            id: albumId,  // Garder l'ID original
+            userId: userId  // Garder l'userId original
+        };
+        return {
+            success: true,
+            message: 'Album modifié avec succès',
+            album: albums[albumIndex]
+        };
+    } else {
+        return {
+            success: false,
+            message: 'Album non trouvé ou non autorisé'
+        };
+    }
+}
+ 
+// Delete an album
+function deleteAlbum(albumId, userId) {
+    const albumIndex = albums.findIndex(a => a.id === albumId && a.userId === userId);
+    if (albumIndex !== -1) {
+        albums.splice(albumIndex, 1);
+        return {
+            success: true,
+            message: 'Album supprimé avec succès'
+        };
+    } else {
+        return {
+            success: false,
+            message: 'Album non trouvé ou non autorisé'
+        };
+    }
+}
+ 
+// Export functions for use in other modules
+module.exports = {
+    createAlbum,
+    getAlbumsByUser,
+    getAlbumById,
+    updateAlbum,
+    deleteAlbum
+};
