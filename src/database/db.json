@@ -1,0 +1,62 @@
+
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "personne1",
+      "password": "pass1",
+      "email": "personne1@example.com",
+      "role": "admin",
+      "createdAt": "2024-01-15"
+    },
+    {
+      "id": 2,
+      "username": "personne2",
+      "password": "pass2",
+      "email": "personne2@example.com",
+      "role": "user",
+      "createdAt": "2024-01-15"
+    },
+    {
+      "id": 3,
+      "username": "personne3",
+      "password": "pass3",
+      "email": "personne3@example.com",
+      "role": "user",
+      "createdAt": "2024-01-15"
+    }
+  ],
+  "albums": [
+    {
+      "id": 1,
+      "title": "Vacances été 2024",
+      "description": "Photos de nos vacances à la plage",
+      "userId": 1,
+      "createdAt": "2024-06-15",
+      "photoCount": 2
+    }
+  ],
+  "photos": [
+    {
+      "id": 1,
+      "albumId": 1,
+      "title": "Coucher de soleil",
+      "description": "Magnifique coucher de soleil sur la plage",
+      "url": "",
+      "uploadedAt": "2024-06-20",
+      "uploadedBy": 1,
+      "likes": 5
+    },
+    {
+      "id": 2,
+      "albumId": 1,
+      "title": "Paysage montagne",
+      "description": "Vue panoramique des montagnes",
+      "url": "",
+      "uploadedAt": "2024-06-21",
+      "uploadedBy": 1,
+      "likes": 3
+    }
+  ],
+  "comments": []
+}
