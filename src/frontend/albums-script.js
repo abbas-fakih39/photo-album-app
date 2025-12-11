@@ -72,3 +72,48 @@ function logout() {
         window.location.href = 'login.html';
     }
 }
+
+// Load an albums
+function loadAlbums() {
+    albums = [
+        {
+            id: 1,
+            title: 'Vacances été 2024',
+            description: 'Photos de nos vacances à la plage',
+            userId: 1,
+            createdAt: '2024-06-15',
+            photoCount: 0
+        }
+    ];
+    displayAlbums();
+}
+
+// Display albums
+function displayAlbums() {
+    const albumsList = document.getElementById('albumsList');
+    const noAlbums = document.getElementById('noAlbums');
+    if (albums.length === 0) {
+        albumsList.style.display = 'none';
+        noAlbums.style.display = 'block';
+    } else {
+        albumsList.style.display = 'grid';
+        noAlbums.style.display = 'none';
+        albumsList.innerHTML = albums.map(album => `
+<div class="album-card">
+<div class="album-header">
+<h3 class="album-title">${album.title}</h3>
+</div>
+<p class="album-description">${album.description || 'Aucune description'}</p>
+<div class="album-info">
+                    📅 ${new Date(album.createdAt).toLocaleDateString('fr-FR')} • 
+                    📷 ${album.photoCount} photo(s)
+</div>
+<div class="album-actions">
+<button class="btn-primary" onclick="openAlbum(${album.id})">Ouvrir</button>
+<button class="btn-secondary" onclick="editAlbum(${album.id})">Modifier</button>
+<button class="btn-danger" onclick="deleteAlbum(${album.id})">Supprimer</button>
+</div>
+</div>
+        `).join('');
+    }
+}
